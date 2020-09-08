@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Switch, Route} from 'react-router-dom';
+import Main from "./components/main/main";
+import Products from "./components/productsList/products-list";
+import Payment from "./components/payment/payment";
+import SuccessPage from "./components/success-page/success-page";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+
+const App = () => {
+    return (
+        <Switch>
+            <Route path="/products">
+                <Products/>
+            </Route>
+            <Route path="/payment">
+                <Payment/>
+            </Route>
+            <Route path="/success">
+                <SuccessPage/>
+            </Route>
+            <Route path="/">
+                {Main}
+            </Route>
+        </Switch>
+    )
+};
 
 export default App;

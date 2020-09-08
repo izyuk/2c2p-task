@@ -1,0 +1,44 @@
+h3 {
+  color: #fff;
+  font-size: 32px;
+  position: relative;
+  margin: 0;
+  top: 50vh;
+  text-align: center;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+      content: '.';
+      color: transparent;
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      bottom: -2px;
+      left: 0;
+    }
+
+    &:hover:after {
+      width: 100%;
+      transition: all linear .5s;
+    }
+
+    &:link {
+      color: #fff;
+    }
+
+    &:focus {
+      color: #fff;
+    }
+
+    &:visited {
+      color: #fff;
+    }
+
+
+  }
+}

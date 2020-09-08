@@ -1,0 +1,58 @@
+.payment-form {
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+
+  background: #fff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  padding: 10px 30px;
+
+  p {
+    margin: 0;
+  }
+
+
+  div, button {
+    margin-top: 10px;
+  }
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  label {
+    display: inline-block;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  select, input {
+
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 10px;
+
+    &:not([id='expiry']) {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+
+  [id='expiry'] {
+    width: 55px;
+  }
+
+  &>button {
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 10px;
+    width: 100%;
+  }
+
+}
+
+
