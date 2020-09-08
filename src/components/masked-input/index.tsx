@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 import InputMask, {InputState} from 'react-input-mask';
 import {masks} from "../../enums";
 
