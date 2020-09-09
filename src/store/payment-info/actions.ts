@@ -1,11 +1,12 @@
 import axios from "axios";
-import {CHANGE_LOADED_STATE, GET_PAYMENT_INFO, PaymentInfoActionTypes, UserPaymentData} from "./types";
+import {CHANGE_LOADED_STATE, GET_PAYMENT_INFO, PaymentInfoActionTypes, UserPaymentDataI} from "./types";
 import {Dispatch} from "redux";
+import {MOCKY_API_METHODS} from "../../enums/endpoints";
 
 
-export const GetPaymentInformation = (userPaymentData: UserPaymentData) => async (dispatch: Dispatch<PaymentInfoActionTypes>) => {
+export const GetPaymentInformation = (userPaymentData: UserPaymentDataI) => async (dispatch: Dispatch<PaymentInfoActionTypes>) => {
     try {
-        const res = await axios.post(`http://www.mocky.io/v2/5d8de441310000a2612b517c`, {
+        const res = await axios.post(`http://www.mocky.io/v2/${MOCKY_API_METHODS.SUCCESS}`, {
             data: userPaymentData
         });
         dispatch({

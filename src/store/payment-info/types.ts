@@ -1,14 +1,9 @@
+import {IsLoadedI, PaymentInfoI} from "../../enums/shared/interfaces";
+
 export const GET_PAYMENT_INFO = 'GET_PAYMENT_INFO';
 export const CHANGE_LOADED_STATE = 'CHANGE_LOADED_STATE';
 
-export interface PaymentInfo {
-    responseCode: string,
-    responseMessage: string,
-    invoiceNo: string,
-    approvalCode: string
-}
-
-export interface UserPaymentData {
+export interface UserPaymentDataI {
     cardType: string,
     cardNumber: string,
     expiry: string,
@@ -16,19 +11,15 @@ export interface UserPaymentData {
     email: string
 }
 
-export interface LoadedState {
-    loaded: boolean
-}
-
 
 interface GetPaymentInfo {
     type: typeof GET_PAYMENT_INFO,
-    payload: PaymentInfo
+    payload: PaymentInfoI
 }
 
 interface LoadedInfoState {
     type: typeof CHANGE_LOADED_STATE,
-    payload: LoadedState
+    payload: IsLoadedI
 }
 
 

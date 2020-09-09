@@ -55,7 +55,6 @@ const PaymentForm = () => {
     const beforeMaskedInputChange = (newState: InputState) => {
         let {value} = newState;
         let selection = newState.selection;
-
         changeCardNumberFieldState(value);
         return {
             value,
@@ -76,10 +75,8 @@ const PaymentForm = () => {
             </div>
             <div>
                 <label htmlFor="card-number">Card Number: </label>
-                <Input beforeMaskedInputChange={beforeMaskedInputChange} callback={(event) => {
-                    console.log('card-number callback', event.target.value);
-                    changeCardNumberFieldState(event.target.value)
-                }}
+                <Input beforeMaskedInputChange={beforeMaskedInputChange}
+                       callback={(event) => changeCardNumberFieldState(event.target.value)}
                        id={'card-number'}
                        formatChars={{"0": "[0-9]"}} maskType={cardType}/>
             </div>

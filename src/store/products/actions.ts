@@ -6,6 +6,7 @@ import {
     PRODUCTS_LOADING_SUCCESS
 } from "./types";
 import {Dispatch} from "redux";
+import {FAKE_STORE_API_METHODS} from "../../enums/endpoints";
 
 
 export const GetProducts = () => async (dispatch: Dispatch<ProductActionTypes>) => {
@@ -14,7 +15,7 @@ export const GetProducts = () => async (dispatch: Dispatch<ProductActionTypes>) 
             type: PRODUCTS_LOADING
         });
 
-        const res = await axios.get(`https://fakestoreapi.com/products/`);
+        const res = await axios.get(`https://fakestoreapi.com/${FAKE_STORE_API_METHODS.products}`);
 
         dispatch({
             type: PRODUCTS_LOADING_SUCCESS,
